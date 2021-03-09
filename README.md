@@ -12,7 +12,9 @@ This installer automates the following steps:
 
 ## Usage
 
-Download `jetbrains-toolbox.sh` and run it. It requires sudo rigths to execute.
+Run the following command to get started with Toolbox. This command requires that you have `sudo` privileges.
+
+`curl -fsSL https://raw.githubusercontent.com/nagygergo/jetbrains-toolbox-install/master/jetbrains-toolbox.sh | bash`
 
 Afterwards you may execute the `jetbrains-toolbox` binary to run the Toolbox App and select which product and version you want to install.
 
