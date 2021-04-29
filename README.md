@@ -12,7 +12,7 @@ This installer automates the following steps:
 
 ## Usage
 
-Download `jetbrains-toolbox.sh` and run it. It requires sudo rigths to execute.
+Download `jetbrains-toolbox.sh` and run it. It requires sudo rights to execute.
 
 Afterwards you may execute the `jetbrains-toolbox` binary to run the Toolbox App and select which product and version you want to install.
 
