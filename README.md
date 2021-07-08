@@ -24,4 +24,6 @@ Afterwards you may execute the `jetbrains-toolbox` binary to run the Toolbox App
  - Gergely Nagy (@nagygergo)
  - @eightseventhreethree
  - Daniel Ziegenberg (@ziegenberg)
+ - Adam Tunnic (@Doregon)
+
 
