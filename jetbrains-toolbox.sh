@@ -32,8 +32,8 @@ fi
 
 chmod -R +rwx ${DIR}
 touch ${DIR}/jetbrains-toolbox.sh
-echo "#!/bin/bash" >> $DIR/jetbrains-toolbox.sh
-echo "$DIR/jetbrains-toolbox" >> $DIR/jetbrains-toolbox.sh
+echo '#!/bin/bash' >> $DIR/jetbrains-toolbox.sh
+echo "$DIR/jetbrains-toolbox \$@" >> $DIR/jetbrains-toolbox.sh
 
 ln -s ${DIR}/jetbrains-toolbox.sh /usr/local/bin/jetbrains-toolbox
 chmod -R +rwx /usr/local/bin/jetbrains-toolbox
