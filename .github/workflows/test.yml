@@ -1,0 +1,22 @@
+name: Testing
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Run install
+        run: sudo $GITHUB_WORKSPACE/jetbrains-toolbox.sh
+      
+      - name: Validate that symlink has been created
+        run:  "[ -f /usr/local/bin/jetbrains-toolbox ]"
+
+      - name: Validate command can be called
+        run: jetbrains-toolbox
