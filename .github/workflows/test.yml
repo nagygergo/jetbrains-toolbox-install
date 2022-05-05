@@ -17,3 +17,6 @@ jobs:
       
       - name: Validate that symlink has been created
         run:  "[ -f /usr/local/bin/jetbrains-toolbox ]"
+
+      - name: Check what happens if jetbrains toolbox is called on CI
+        run: jetbrains-toolbox
