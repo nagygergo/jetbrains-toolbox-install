@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Testing
 
 # Controls when the workflow will run
 on:
@@ -30,7 +30,5 @@ jobs:
         run: sudo $GITHUB_WORKSPACE/jetbrains-toolbox.sh
 
       # Runs a set of commands using the runners shell
-      - name: Validate that install went fine
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Validate that symlink has been created
+        run:  "[ -f /usr/local/bin/jetbrains-toolbox ]"
