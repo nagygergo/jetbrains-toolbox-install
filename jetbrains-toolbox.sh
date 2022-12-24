@@ -26,7 +26,7 @@ DIR="/opt/jetbrains-toolbox"
 echo ""
 echo  -e "\e[94mInstalling to $DIR\e[39m"
 echo ""
-if mkdir ${DIR}; then
+if mkdir -p ${DIR}; then
     tar -xzf ${DEST} -C ${DIR} --strip-components=1
 fi
 
