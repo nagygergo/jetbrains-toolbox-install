@@ -21,7 +21,7 @@ tar -xzf "$TMP_DIR/$ARCHIVE_FILENAME" -C "$INSTALL_DIR" --strip-components=1
 rm "$TMP_DIR/$ARCHIVE_FILENAME"
 chmod +x "$INSTALL_DIR/jetbrains-toolbox"
 
-echo "\e[94mSymlinking to $SYMLINK_DIR/jetbrains-toolbox...\e[39m"
+echo -e "\e[94mSymlinking to $SYMLINK_DIR/jetbrains-toolbox...\e[39m"
 mkdir -p $SYMLINK_DIR
 rm "$SYMLINK_DIR/jetbrains-toolbox"
 ln -s "$INSTALL_DIR/jetbrains-toolbox" "$SYMLINK_DIR/jetbrains-toolbox"
