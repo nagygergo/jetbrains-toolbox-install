@@ -13,10 +13,12 @@ ARCHIVE_URL=$(curl -s 'https://data.services.jetbrains.com/products/releases?cod
 ARCHIVE_FILENAME=$(basename "$ARCHIVE_URL")
 
 echo -e "\e[94mDownloading $ARCHIVE_FILENAME...\e[39m"
+rm "$TMP_DIR/$ARCHIVE_FILENAME" || true
 wget -q --show-progress -cO "$TMP_DIR/$ARCHIVE_FILENAME" "$ARCHIVE_URL"
 
 echo  -e "\e[94mExtracting to $INSTALL_DIR...\e[39m"
 mkdir -p "$INSTALL_DIR"
+rm "$INSTALL_DIR/jetbrains-toolbox" || true
 tar -xzf "$TMP_DIR/$ARCHIVE_FILENAME" -C "$INSTALL_DIR" --strip-components=1
 rm "$TMP_DIR/$ARCHIVE_FILENAME"
 chmod +x "$INSTALL_DIR/jetbrains-toolbox"
