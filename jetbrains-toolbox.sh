@@ -23,7 +23,7 @@ chmod +x "$INSTALL_DIR/jetbrains-toolbox"
 
 echo -e "\e[94mSymlinking to $SYMLINK_DIR/jetbrains-toolbox...\e[39m"
 mkdir -p $SYMLINK_DIR
-rm "$SYMLINK_DIR/jetbrains-toolbox"
+rm "$SYMLINK_DIR/jetbrains-toolbox" || true
 ln -s "$INSTALL_DIR/jetbrains-toolbox" "$SYMLINK_DIR/jetbrains-toolbox"
 
 echo  -e "\e[94mRunning for the first time to set-up...\e[39m"
