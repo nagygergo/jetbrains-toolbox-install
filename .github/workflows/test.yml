@@ -13,10 +13,10 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Run install
-        run: sudo $GITHUB_WORKSPACE/jetbrains-toolbox.sh
+        run: $GITHUB_WORKSPACE/jetbrains-toolbox.sh
       
       - name: Validate that symlink has been created
-        run:  "[ -f /usr/local/bin/jetbrains-toolbox ]"
+        run:  '[ -f $HOME/.local/bin/jetbrains-toolbox ]'
 
-      - name: Validate command can be called
-        run: jetbrains-toolbox
+      - name: Validate command is executable
+        run: '[[ $(file "$HOME/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox") == *"ELF 64-bit LSB executable"* ]]'
