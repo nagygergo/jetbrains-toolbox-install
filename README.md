@@ -1,6 +1,6 @@
 # jetbrains-toolbox-install
 
-This is an installer for the [JetBrains Toolbox App](https://www.jetbrains.com/toolbox-app/). It is the vendor recommended tool to install JetBrains products. See [Install using the Toolbox App](https://www.jetbrains.com/help/idea/installation-guide.html#toolbox) for more information.
+This is an installer for the [JetBrains Toolbox App](https://www.jetbrains.com/toolbox-app/).
 
 ## How it works
 
