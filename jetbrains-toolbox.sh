@@ -20,7 +20,7 @@ wget -q --show-progress -cO "$TMP_DIR/$ARCHIVE_FILENAME" "$ARCHIVE_URL"
 echo -e "\e[94mExtracting to $INSTALL_DIR...\e[39m"
 mkdir -p "$INSTALL_DIR"
 rm "$INSTALL_DIR/jetbrains-toolbox" 2>/dev/null || true
-tar -xzf "$TMP_DIR/$ARCHIVE_FILENAME" -C "$INSTALL_DIR" --strip-components=1
+tar -xzf "$TMP_DIR/$ARCHIVE_FILENAME" -C "$INSTALL_DIR" --strip-components=2
 rm "$TMP_DIR/$ARCHIVE_FILENAME"
 chmod +x "$INSTALL_DIR/jetbrains-toolbox"
 
