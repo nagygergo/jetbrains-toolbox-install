@@ -7,7 +7,7 @@ This is an installer for the [JetBrains Toolbox App](https://www.jetbrains.com/t
 This installer automates the following steps:
 
 1. Download the latest AppImage release from the Toolbox App web page.
-2. Extract the `jetbrains-toolbox` binary to `~/.local/share/JetBrains/Toolbox/bin`
+2. Extract the `jetbrains-toolbox` binary to `~/.local/share/JetBrains/Toolbox/`
 3. Creates a symbolic link in the `~/.local/bin` directory
 
 (Adding the shim directory to `PATH`, creating a `.desktop` entry and setting-up autostart is done automatically by Toolbox itself.)
