@@ -27,7 +27,7 @@ esac
 
 echo -e "\e[94mDetected architecture: $ARCH (using $DOWNLOAD_ARCH)\e[39m"
 echo -e "\e[94mFetching the URL of the latest version...\e[39m"
-ARCHIVE_URL=$(curl -s 'https://data.services.jetbrains.com/products/releases?code=TBA&latest=true&type=release' | grep -A 3 "\"$DOWNLOAD_ARCH\"" | grep '"link"' | head -1 | sed 's/.*"link": "\([^"]*\)".*/\1/')
+ARCHIVE_URL=$(curl -s 'https://data.services.jetbrains.com/products/releases?code=TBA&latest=true&type=release' | sed -n 's/.*"'"$DOWNLOAD_ARCH"'":{"link":"\([^"]*\)".*/\1/p')
 if [ -z "$ARCHIVE_URL" ]; then
     echo -e "\e[91mFailed to fetch download URL for architecture: $DOWNLOAD_ARCH\e[39m"
     echo "This might indicate that JetBrains Toolbox is not available for your architecture, or there was a network issue."
