@@ -6,11 +6,16 @@ This is an installer for the [JetBrains Toolbox App](https://www.jetbrains.com/t
 
 This installer automates the following steps:
 
-1. Download the latest AppImage release from the Toolbox App web page.
-2. Extract the `jetbrains-toolbox` binary to `~/.local/share/JetBrains/Toolbox/`
-3. Creates a symbolic link in the `~/.local/bin` directory
+1. Detect system architecture (x86_64 or ARM64)
+2. Download the latest AppImage release for the detected architecture from the Toolbox App web page
+3. Extract the `jetbrains-toolbox` binary to `~/.local/share/JetBrains/Toolbox/`
+4. Creates a symbolic link in the `~/.local/bin` directory
 
 (Adding the shim directory to `PATH`, creating a `.desktop` entry and setting-up autostart is done automatically by Toolbox itself.)
+
+**Supported architectures:**
+- x86_64 (Intel/AMD 64-bit)
+- ARM64/aarch64 (ARM 64-bit)
 
 ## Usage
 
