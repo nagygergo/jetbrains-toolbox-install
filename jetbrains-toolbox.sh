@@ -34,6 +34,13 @@ if [ -z "$ARCHIVE_URL" ]; then
     exit 1
 fi
 
+# Validate that we got a proper Linux tar.gz URL and not a Mac dmg or Windows exe
+if [[ ! "$ARCHIVE_URL" =~ \.tar\.gz$ ]]; then
+    echo -e "\e[91mError: Downloaded URL does not point to a .tar.gz file: $ARCHIVE_URL\e[39m"
+    echo "Expected a Linux archive but got a different format. Please report this issue."
+    exit 1
+fi
+
 ARCHIVE_FILENAME=$(basename "$ARCHIVE_URL")
 
 echo -e "\e[94mDownloading $ARCHIVE_FILENAME...\e[39m"
