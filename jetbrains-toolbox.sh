@@ -27,11 +27,7 @@ esac
 
 echo -e "\e[94mDetected architecture: $ARCH (using $DOWNLOAD_ARCH)\e[39m"
 echo -e "\e[94mFetching the URL of the latest version...\e[39m"
-if ! command -v jq >/dev/null 2>&1; then
-    echo -e "\e[91mError: 'jq' is required but not installed. Please install 'jq' and rerun this script.\e[39m"
-    exit 1
-fi
-ARCHIVE_URL=$(curl -s 'https://data.services.jetbrains.com/products/releases?code=TBA&latest=true&type=release' | jq -r '.TBA[0].downloads["'"$DOWNLOAD_ARCH"'"].link')
+ARCHIVE_URL=$(curl -s 'https://data.services.jetbrains.com/products/releases?code=TBA&latest=true&type=release' | grep -A 3 "\"$DOWNLOAD_ARCH\"" | grep '"link"' | head -1 | sed 's/.*"link": "\([^"]*\)".*/\1/')
 if [ -z "$ARCHIVE_URL" ]; then
     echo -e "\e[91mFailed to fetch download URL for architecture: $DOWNLOAD_ARCH\e[39m"
     echo "This might indicate that JetBrains Toolbox is not available for your architecture, or there was a network issue."
@@ -52,7 +48,7 @@ rm "$TMP_DIR/$ARCHIVE_FILENAME"
 chmod +x "$INSTALL_DIR/bin/jetbrains-toolbox"
 
 echo -e "\e[94mSymlinking to $SYMLINK_DIR/jetbrains-toolbox...\e[39m"
-mkdir -p $SYMLINK_DIR
+mkdir -p "$SYMLINK_DIR"
 rm "$SYMLINK_DIR/jetbrains-toolbox" 2>/dev/null || true
 ln -s "$INSTALL_DIR/bin/jetbrains-toolbox" "$SYMLINK_DIR/jetbrains-toolbox"
 
